@@ -1,9 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+import {healthCheck}  from './controllers/healthcheck';
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+var router = express.Router();
+
+router.get('/', healthCheck);
+
+app.use('/', router);
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
