@@ -1,4 +1,4 @@
-import { healthCheck } from './controllers/healthcheck';
+import healthCheck from './controllers/healthcheck';
 
 const express = require('express');
 
